@@ -17,6 +17,13 @@ public class MotionModuleImpl implements MotionModule{
     private double lBack = 0;
     private double rBack = 0;
     private boolean runningMode = false;
+    public void init() {
+    /*初始化创建马达类*/
+        leftFront = hardwareMap.get(DcMotorEx.class,"l1");
+        leftBack = hardwareMap.get(DcMotorEx.class,"l2");
+        rightFront = hardwareMap.get(DcMotorEx.class,"r1");
+        rightBack = hardwareMap.get(DcMotorEx.class,"r2");
+    }
 
     public void setSpeed(double angleSpeed) {
         /*
